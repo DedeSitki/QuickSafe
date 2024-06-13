@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "411417923508",
+    "project_id": "quicksafe-10044",
+    "storage_bucket": "quicksafe-10044.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411417923508:android:74b3220b5b056d09a32ce1",
+        "android_client_info": {
+          "package_name": "com.example.quicksafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411417923508-9gi6f69422jf2k5j60ql4uhri9d69mr9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLlU0t-z-4JUvrqxVU4x2TOsyZYbTn--8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411417923508-7q5qkp18vdreqjdncgirihn2gof0tvj3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411417923508-kj3hgqr0ot901uv0b0hl22f5ti2jtlhe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.quicksafeProject"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411417923508:android:b3dc4101b79e8369a32ce1",
+        "android_client_info": {
+          "package_name": "com.example.quicksafe_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411417923508-q4jqeum275c2ql3472325mhiknkfrouv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.quicksafe_project",
+            "certificate_hash": "41e4397c072eff96d4919e376f45212ec0ae29c5"
+          }
+        },
+        {
+          "client_id": "411417923508-9gi6f69422jf2k5j60ql4uhri9d69mr9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLlU0t-z-4JUvrqxVU4x2TOsyZYbTn--8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411417923508-7q5qkp18vdreqjdncgirihn2gof0tvj3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "411417923508-kj3hgqr0ot901uv0b0hl22f5ti2jtlhe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.quicksafeProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
