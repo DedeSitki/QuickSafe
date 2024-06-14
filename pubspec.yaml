@@ -34,9 +34,12 @@ dependencies:
   font_awesome_flutter:
   google_sign_in:
   path_provider:
-  google_maps_flutter:
+  google_maps_flutter: ^2.6.1
   cupertino_icons: ^1.0.6
-
+  dio:
+  flutter_polyline_points:
+  location: ^4.3.0
+  geolocator:
 
 dev_dependencies:
   flutter_test:
