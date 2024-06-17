@@ -15,6 +15,13 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        elevation: 0,
+        automaticallyImplyLeading: false,
+        title: Image.asset("assets/icons/quicksafe-buyuk-appbar-red.png"),
+        toolbarHeight: 55,
+      ),
       bottomNavigationBar: customBottomNavbar(),
       body: ref.watch(mainScaffoldRiverpod).body(),
     );

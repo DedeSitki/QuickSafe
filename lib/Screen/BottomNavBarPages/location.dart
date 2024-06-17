@@ -65,7 +65,7 @@ class _LocationState extends State<Location> {
   }
 
   void _shareLocation() {
-    _launchURL("sms:05078871701?body=Merhaba, tehlikede hissediyorum. Bu benim konumum. https://maps.google.com/?q=41.181797,27.817872");
+    _launchURL("sms:05309602743?body=Merhaba, tehlikede hissediyorum. Bu benim konumum. https://maps.google.com/?q=41.181797,27.817872");
   }
 
   void _launchURL(String url) async {

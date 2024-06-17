@@ -12,13 +12,13 @@ class _HomeState extends ConsumerState<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            emercencyButton(),
-          ],
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              emercencyButton(),
+            ],
+          ),
         ),
-      ),
     );
   }
 
@@ -31,7 +31,7 @@ class _HomeState extends ConsumerState<Home> {
         width: 150,
         height: 150,
         child: Image.asset(
-          "assets/icons/emergency-button.png",
+          "assets/images/sos-button.png",
           fit: BoxFit.cover,
         ),
       ),

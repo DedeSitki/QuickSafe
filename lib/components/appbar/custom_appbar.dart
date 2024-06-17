@@ -4,7 +4,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Size preferredSize;
 
   CustomAppBar({Key? key})
-      : preferredSize = const Size.fromHeight(55),
+      : preferredSize = const Size.fromHeight(60),
         super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -13,9 +13,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       centerTitle: true,
       backgroundColor: Colors.white,
-      title: Row(
-        children: [Image.asset("assets/images/heo-buyuk-appbar.png",width: 379,)],
-      ),
+      title: Image.asset("assets/icons/quicksafe-buyuk-appbar-red.png",width: 400),
     );
   }
 }
