@@ -38,8 +38,6 @@ dependencies:
   cupertino_icons: ^1.0.6
   dio:
   flutter_polyline_points:
-  location: ^4.3.0
-  geolocator:
 
 dev_dependencies:
   flutter_test:

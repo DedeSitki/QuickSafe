@@ -25,7 +25,7 @@ class _HomeState extends ConsumerState<Home> {
   Widget emercencyButton() {
     return GestureDetector(
       onTap: (){
-        _launchURL("tel:+05078871701");
+        _launchURL("tel:05078871701");
       },
       child: Container(
         width: 150,
