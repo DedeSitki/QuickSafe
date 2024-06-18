@@ -38,6 +38,10 @@ dependencies:
   cupertino_icons: ^1.0.6
   dio:
   flutter_polyline_points:
+  flutter_gemini:
+  google_generative_ai: ^0.4.3
+  flutter_markdown: ^0.7.2
+  animated_text_kit:
 
 dev_dependencies:
   flutter_test:

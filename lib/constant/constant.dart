@@ -14,6 +14,7 @@ class Constant{
   //Red
   static const Color red500 = Color(0xFFea4335);
   static const Color red300 = Color(0xFFf28b82);
+  static const Color appbarRed = Color(0xFFD72323);
   //Black
   static const Color black = Color(0xFF000000);
   //Grey

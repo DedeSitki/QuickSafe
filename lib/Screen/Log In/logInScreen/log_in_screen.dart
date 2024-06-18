@@ -2,13 +2,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:grock/grock.dart';
-import 'package:quicksafe_project/MainScreen/main_scaffold.dart';
 import '../../../constant/constant.dart';
 import '../../../ext/button.dart';
 import '../../../ext/text_form_field.dart';
 import '../../../ext/text_style.dart';
 import '../../../firebase/firebase_auth_implementation/firebase_auth_services.dart';
 import '../../../firebase/global/common/toast.dart';
+import '../../MainScreen/main_scaffold.dart';
 import '../SignIn/sign_up.dart';
 import '../forgotPassword/forgot_password.dart';
 
@@ -20,27 +20,14 @@ class LogInScreen extends StatefulWidget {
   State<LogInScreen> createState() => _LogInScreenState();
 }
 
-Map<String, dynamic>? _userData;
 
-class _LogInScreenState extends State<LogInScreen> {
+  class _LogInScreenState extends State<LogInScreen> {
   final FirebaseAuthService _auth = FirebaseAuthService();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   bool _isSigning = false;
 
-  /*void _login() async {
-    try {
-      await _auth.signInWithEmailAndPassword(
-        email: _emailController.text,
-        password: _passwordController.text,
-      );
-      print("User logged in successfully");
-    } catch (e) {
-      print("Error during login: $e");
-    }
-  }*/
   @override
   void dispose() {
     _emailController.dispose();
@@ -53,47 +40,47 @@ class _LogInScreenState extends State<LogInScreen> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.only(top: 25, left: 24, right: 24),
+            padding: const EdgeInsets.only(top: 25, left: 24, right: 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 welcomeText(),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
                 logInText(),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
                 ExtPageTFF.UsualTFF(_emailController, Constant.green500,
                     "E-Mail", "E-Mail", Icons.email),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 ExtPageTFF.UsualTFF(_passwordController, Constant.green500,
                     "Şifre", "Şifre", Icons.password_outlined),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 forgotPassword(),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 ExtPageButton.ObjectButton(() => _signIn(), Constant.green500,
                     "Giriş Yapınız", _isSigning),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 orText(),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 OtherLogin(),
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
                 signInText(),
-                SizedBox(height: 230),
+                const SizedBox(height: 230),
                 //AnimatedTextHi()
               ],
             ),
@@ -130,7 +117,7 @@ class _LogInScreenState extends State<LogInScreen> {
         )
       ]),
       onTap: () {
-        Grock.to(SignUpScreen());
+        Grock.to(const SignUpScreen());
       },
     );
   }
@@ -142,13 +129,13 @@ class _LogInScreenState extends State<LogInScreen> {
         style: ExtPageText.TxtStyle(FontWeight.w500, 14, Constant.yellow600),
       ),
       onTap: () {
-        Grock.to(ForgotPassword());
+        Grock.to(const ForgotPassword());
       },
     );
   }
 
   Row orText() {
-    return Row(
+    return const Row(
       children: [
         Expanded(
             child: Divider(

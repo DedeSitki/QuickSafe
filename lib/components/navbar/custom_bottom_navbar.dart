@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:grock/grock.dart';
-import 'package:quicksafe_project/MainScreen/main_scaffold.dart';
+import '../../Screen/MainScreen/main_scaffold.dart';
 import '../../constant/constant.dart';
 import '../../ext/text_style.dart';
 

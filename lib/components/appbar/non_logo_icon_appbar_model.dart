@@ -6,7 +6,7 @@ class NonLogoIconAppBarModel extends StatelessWidget implements PreferredSizeWid
   final String Function() getTitle;
 
   NonLogoIconAppBarModel({Key? key, required this.getTitle})
-      : preferredSize = const Size.fromHeight(66),
+      : preferredSize = const Size.fromHeight(53),
         super(key: key);
 
   @override
@@ -16,10 +16,7 @@ class NonLogoIconAppBarModel extends StatelessWidget implements PreferredSizeWid
       elevation: 0,
       automaticallyImplyLeading: false,
       centerTitle: true,
-      title: Padding(
-        padding: const EdgeInsets.only(top: 25),
-        child: Center(child: Text(getTitle())),
-      ),
+      title: Center(child: Text(getTitle())),
     );
   }
 }
