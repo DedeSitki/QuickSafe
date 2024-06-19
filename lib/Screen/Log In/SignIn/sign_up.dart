@@ -1,6 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grock/grock.dart';
 import '../../../constant/constant.dart';
 import '../../../ext/button.dart';
@@ -122,6 +122,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
     String password = _passwordController.text;
     String passwordCheck = _passwordCheckController.text;
 
+    if(password != passwordCheck){
+      showToastFail(message: "Password do not match");
+      setState(() {
+        _isSigningUp = false;
+      });
+      return;
+    }
+
     User? user = await _auth.signUpWithEmailAndPassword(email, password);
 
     setState(() {
@@ -136,6 +144,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
     } else {
       showToastFail(message: "Some error happened");
     }
+
+    await FirebaseFirestore.instance.collection('users').doc(user?.uid).set({
+      'cellPhone': cellPhone,
+      'fullName': fullName,
+      'email': email,
+      'createdAt': FieldValue.serverTimestamp(),
+    });
   }
 
   Widget backbtn() {

@@ -27,25 +27,25 @@ class _AccountState extends State<Account> {
     return Scaffold(
         body: Column(
       children: [
-        SizedBox(height: 30),
+        const SizedBox(height: 30),
         accountPages(
-            "assets/icons/attendance.png", "Hesap Bilgilerim", AccountInfo()),
-        SizedBox(height: 10),
+            "assets/icons/attendance.png", "Hesap Bilgilerim", const AccountInfo()),
+        const SizedBox(height: 10),
         accountPages(
-            "assets/icons/profile.png", "Kişisel Bilgiler", PersonalInfo()),
-        SizedBox(height: 10),
+            "assets/icons/profile.png", "Kişisel Bilgiler", const PersonalInfo()),
+        const SizedBox(height: 10),
         accountPages(
-            "assets/icons/hospital.png", "Sağlık Bilgileri", HealthyInfo()),
-        SizedBox(height: 10),
+            "assets/icons/hospital.png", "Sağlık Bilgileri", const HealthyInfo()),
+        const SizedBox(height: 10),
         accountPages(
-            "assets/icons/mailbox.png", "İletişim Bilgileri", ContactInfo()),
-        SizedBox(height: 10),
-        accountPages("assets/icons/helpdesk.png", "Yardım", Help()),
-        SizedBox(height: 10),
-        accountPages("assets/icons/info.png", "Uygulama Hakkında", AboutApp()),
-        SizedBox(height: 30),
+            "assets/icons/mailbox.png", "İletişim Bilgileri", const ContactInfo()),
+        const SizedBox(height: 10),
+        accountPages("assets/icons/helpdesk.png", "Yardım", const Help()),
+        const SizedBox(height: 10),
+        accountPages("assets/icons/info.png", "Uygulama Hakkında", const AboutApp()),
+        const SizedBox(height: 30),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 140),
+          padding: const EdgeInsets.symmetric(horizontal: 140),
           child: ExtPageButton.PrimaryButton(() {
             _exitFunc(context);
           }, Constant.appbarRed, "Log Out"),
@@ -61,7 +61,7 @@ void _exitFunc(BuildContext context) async {
     showToastCorrect(message: "User is successfully logged out");
     Navigator.pushAndRemoveUntil(
       context,
-      MaterialPageRoute(builder: (context) => LogInScreen()),
+      MaterialPageRoute(builder: (context) => const LogInScreen()),
       (route) => false,
     );
   } catch (e) {
@@ -73,7 +73,7 @@ Widget accountPages(String icon, String title, Widget pageName) {
   return GestureDetector(
     onTap: () => Grock.to(pageName),
     child: Container(
-      padding: EdgeInsets.symmetric(horizontal: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       height: 60,
       width: double.infinity,
       decoration: BoxDecoration(
@@ -83,7 +83,7 @@ Widget accountPages(String icon, String title, Widget pageName) {
         children: [
           Container(
             child: Row(
-              children: [Image.asset(icon), SizedBox(width: 15), Text(title)],
+              children: [Image.asset(icon), const SizedBox(width: 15), Text(title)],
             ),
           ),
           Image.asset("assets/icons/forward.png")
