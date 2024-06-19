@@ -56,6 +56,10 @@ flutter:
     - assets/images/
     - assets/icons/
 
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/quick-safe-logo.png"
 
   # fonts:
   #   - family: Schyler
