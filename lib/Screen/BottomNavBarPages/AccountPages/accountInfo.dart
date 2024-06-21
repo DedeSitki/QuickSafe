@@ -13,10 +13,11 @@ class AccountInfo extends StatefulWidget {
 }
 
 class _AccountInfoState extends State<AccountInfo> {
-  final TextEditingController _fullNameController = TextEditingController();
-  final TextEditingController _cellphoneController = TextEditingController();
+  final TextEditingController _userId = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _cellphoneController = TextEditingController();
   final TextEditingController _createdDateController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   void initState() {
@@ -33,9 +34,10 @@ class _AccountInfoState extends State<AccountInfo> {
           .get();
       if (userDoc.exists) {
         setState(() {
-          _fullNameController.text = userDoc['fullName'];
-          _cellphoneController.text = userDoc['cellPhone'];
+          _userId.text = user.uid;
           _emailController.text = userDoc['email'];
+          _cellphoneController.text = userDoc['cellPhone'];
+          _passwordController.text = userDoc['password'];
           _createdDateController.text = userDoc['createdAt'];
         });
       }
@@ -44,7 +46,11 @@ class _AccountInfoState extends State<AccountInfo> {
 
   @override
   void dispose() {
-    _fullNameController.dispose();
+    _userId.dispose();
+    _emailController.dispose();
+    _cellphoneController.dispose();
+    _createdDateController.dispose();
+    _passwordController.dispose();
     super.dispose();
   }
 
@@ -56,36 +62,49 @@ class _AccountInfoState extends State<AccountInfo> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
-            ExtPageTFF.UsualTFF(
-              _fullNameController,
+            ExtPageTFF.UsualEnabledFalseTFF(
+              _userId,
               Constant.green500,
-              "Full Name",
-              "Full Name",
-              Icons.person,
+              "User Id",
+              "User Id",
+              Icons.numbers,
+
             ),
             const SizedBox(height: 10),
-            ExtPageTFF.UsualTFF(
-              _cellphoneController,
-              Constant.green500,
-              "cellPhone",
-              "cellPhone",
-              Icons.phone_android,
-            ),
-            const SizedBox(height: 10),
-            ExtPageTFF.UsualTFF(
+            ExtPageTFF.UsualEnabledFalseTFF(
               _emailController,
               Constant.green500,
               "e-Mail",
               "e-Mail",
               Icons.mail,
+
             ),
             const SizedBox(height: 10),
-            ExtPageTFF.UsualTFF(
+            ExtPageTFF.UsualEnabledFalseTFF(
+              _cellphoneController,
+              Constant.green500,
+              "cellPhone",
+              "cellPhone",
+              Icons.phone_android,
+
+            ),
+            const SizedBox(height: 10),
+            ExtPageTFF.ObscureTextEnabledFalseTFF(
+              _passwordController,
+              Constant.green500,
+              "Password",
+              "Password",
+              Icons.password,
+              true
+            ),
+            const SizedBox(height: 10),
+            ExtPageTFF.UsualEnabledFalseTFF(
               _createdDateController,
               Constant.green500,
               "Created Date",
               "Created Date",
               Icons.calendar_month,
+
             ),
           ],
         ),

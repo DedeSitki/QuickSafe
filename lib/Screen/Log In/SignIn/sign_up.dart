@@ -20,11 +20,12 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   final FirebaseAuthService _auth = FirebaseAuthService();
-  TextEditingController _cellphoneController = TextEditingController();
-  TextEditingController _fullNameController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _passwordCheckController = TextEditingController();
+  final TextEditingController _cellphoneController = TextEditingController();
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _passwordCheckController = TextEditingController();
+  final TextEditingController _genderController = TextEditingController();
 
   bool value = false;
   bool _isSigningUp = false;
@@ -57,6 +58,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               const SizedBox(
                 height: 30,
               ),
+              //CellPhone TFF
               ExtPageTFF.inputFormattersTFF(
                 _cellphoneController,
                 Constant.green500,
@@ -67,16 +69,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
               const SizedBox(
                 height: 15,
               ),
+              //FullName TFF
               ExtPageTFF.UsualTFF(_fullNameController, Constant.green500,
                   "Adınız Soyadınız", "Adınız Soyadınız", Icons.person),
               const SizedBox(
                 height: 15,
               ),
+              //Gender TFF
+              ExtPageTFF.WithImageTFF(_genderController, Constant.green500,
+                  "Gender", "Gender","assets/icons/gender.png"),
+              const SizedBox(
+                height: 15,
+              ),
+              //E-Mail TFF
               ExtPageTFF.UsualTFF(_emailController, Constant.green500,
                   "E-Mail Adresi", "E-Mail Adresi", Icons.email_outlined),
               const SizedBox(
                 height: 15,
               ),
+              //Password TFF
               ExtPageTFF.UsualTFF(
                   _passwordController,
                   Constant.green500,
@@ -86,6 +97,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               const SizedBox(
                 height: 15,
               ),
+              //Passwprd Check TFF
               ExtPageTFF.UsualTFF(
                   _passwordCheckController,
                   Constant.green500,
@@ -95,6 +107,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               const SizedBox(
                 height: 15,
               ),
+
               KVKK(),
               const SizedBox(
                 height: 15,
@@ -149,7 +162,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
       'cellPhone': cellPhone,
       'fullName': fullName,
       'email': email,
-      'createdAt': FieldValue.serverTimestamp(),
+      'createdAt': FieldValue.serverTimestamp().toString(),
+      'password': password,
     });
   }
 
