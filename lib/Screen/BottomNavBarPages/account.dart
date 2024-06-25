@@ -5,6 +5,7 @@ import 'package:quicksafe_project/Screen/BottomNavBarPages/AccountPages/aboutApp
 import 'package:quicksafe_project/Screen/BottomNavBarPages/AccountPages/contactInfo.dart';
 import 'package:quicksafe_project/Screen/BottomNavBarPages/AccountPages/help.dart';
 import 'package:quicksafe_project/Screen/BottomNavBarPages/AccountPages/personalInfo.dart';
+import 'package:quicksafe_project/Screen/Log%20In/SignIn/my_info.dart';
 import 'package:quicksafe_project/Screen/Log%20In/logInScreen/log_in_screen.dart';
 import 'package:quicksafe_project/constant/constant.dart';
 import 'package:quicksafe_project/ext/button.dart';
@@ -25,32 +26,48 @@ class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        const SizedBox(height: 30),
-        accountPages(
-            "assets/icons/attendance.png", "Hesap Bilgilerim", const AccountInfo()),
-        const SizedBox(height: 10),
-        accountPages(
-            "assets/icons/profile.png", "Kişisel Bilgiler", const PersonalInfo()),
-        const SizedBox(height: 10),
-        accountPages(
-            "assets/icons/hospital.png", "Sağlık Bilgileri", const HealthyInfo()),
-        const SizedBox(height: 10),
-        accountPages(
-            "assets/icons/mailbox.png", "İletişim Bilgileri", const ContactInfo()),
-        const SizedBox(height: 10),
-        accountPages("assets/icons/helpdesk.png", "Yardım", const Help()),
-        const SizedBox(height: 10),
-        accountPages("assets/icons/info.png", "Uygulama Hakkında", const AboutApp()),
-        const SizedBox(height: 30),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 140),
-          child: ExtPageButton.PrimaryButton(() {
-            _exitFunc(context);
-          }, Constant.appbarRed, "Log Out"),
-        )
-      ],
+        body: SingleChildScrollView(
+      child: Column(
+        children: [
+          const SizedBox(height: 30),
+          accountPages("assets/icons/attendance.png", "Hesap Bilgilerim",
+              const AccountInfo()),
+          const SizedBox(height: 10),
+          accountPages("assets/icons/profile.png", "Kişisel Bilgiler",
+              const PersonalInfo()),
+          const SizedBox(height: 10),
+          accountPages("assets/icons/hospital.png", "Sağlık Bilgileri",
+              const HealthyInfo()),
+          const SizedBox(height: 10),
+          accountPages("assets/icons/mailbox.png", "İletişim Bilgileri",
+              const ContactInfo()),
+          const SizedBox(height: 10),
+          accountPages("assets/icons/helpdesk.png", "Yardım", const Help()),
+          const SizedBox(height: 10),
+          accountPages(
+              "assets/icons/info.png", "Uygulama Hakkında", const AboutApp()),
+          const SizedBox(height: 30),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: ExtPageButton.PrimaryButton(() {
+                    _exitFunc(context);
+                  }, Constant.appbarRed, "Log Out"),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: ExtPageButton.PrimaryButton(() {
+                    Grock.to(const MyInfo());
+                  }, Constant.green500, "Edit Information"),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
     ));
   }
 }
@@ -83,7 +100,11 @@ Widget accountPages(String icon, String title, Widget pageName) {
         children: [
           Container(
             child: Row(
-              children: [Image.asset(icon), const SizedBox(width: 15), Text(title)],
+              children: [
+                Image.asset(icon),
+                const SizedBox(width: 15),
+                Text(title)
+              ],
             ),
           ),
           Image.asset("assets/icons/forward.png")

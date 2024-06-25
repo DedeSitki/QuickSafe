@@ -35,10 +35,10 @@ class _HealthyInfoState extends State<HealthyInfo> {
           .get();
       if (userDoc.exists) {
         setState(() {
-          _medicalHistoryController.text = user.uid;
-          _allergyController.text = userDoc['email'];
-          _medicineController.text = userDoc['cellPhone'];
-          _emergencyInformationController.text = userDoc['password'];
+          _medicalHistoryController.text = userDoc['medicalHistory'];
+          _allergyController.text = userDoc['allergy'];
+          _medicineController.text = userDoc['medicine'];
+          _emergencyInformationController.text = userDoc['emergencyContactInfoNumber'];
         });
       }
     }

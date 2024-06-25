@@ -34,9 +34,9 @@ class _ContactInfoState extends State<ContactInfo> {
           .get();
       if (userDoc.exists) {
         setState(() {
-          _cellphoneController.text = user.uid;
+          _cellphoneController.text = userDoc['cellPhone'] ;
           _emailController.text = userDoc['email'];
-          _emergencyContactInfo.text = userDoc['cellPhone'];
+          _emergencyContactInfo.text = userDoc['emergencyContactInfoNumber'];
 
         });
       }
@@ -47,7 +47,6 @@ class _ContactInfoState extends State<ContactInfo> {
     _cellphoneController.dispose();
     _emailController.dispose();
     _emergencyContactInfo.dispose();
-
     super.dispose();
   }
 

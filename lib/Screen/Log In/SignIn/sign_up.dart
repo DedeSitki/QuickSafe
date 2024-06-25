@@ -20,20 +20,16 @@ class SignUpScreen extends StatefulWidget {
 
 class _SignUpScreenState extends State<SignUpScreen> {
   final FirebaseAuthService _auth = FirebaseAuthService();
-  final TextEditingController _cellphoneController = TextEditingController();
-  final TextEditingController _fullNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _passwordCheckController = TextEditingController();
-  final TextEditingController _genderController = TextEditingController();
+  final TextEditingController _passwordCheckController =
+      TextEditingController();
 
   bool value = false;
   bool _isSigningUp = false;
 
   @override
   void dispose() {
-    _cellphoneController.dispose();
-    _fullNameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
     _passwordCheckController.dispose();
@@ -56,30 +52,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               text1(),
               const SizedBox(
-                height: 30,
-              ),
-              //CellPhone TFF
-              ExtPageTFF.inputFormattersTFF(
-                _cellphoneController,
-                Constant.green500,
-                "Cep Telefonu Numaranız",
-                "Cep Telefonu Numaranız",
-                Icons.phone,
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              //FullName TFF
-              ExtPageTFF.UsualTFF(_fullNameController, Constant.green500,
-                  "Adınız Soyadınız", "Adınız Soyadınız", Icons.person),
-              const SizedBox(
-                height: 15,
-              ),
-              //Gender TFF
-              ExtPageTFF.WithImageTFF(_genderController, Constant.green500,
-                  "Gender", "Gender","assets/icons/gender.png"),
-              const SizedBox(
-                height: 15,
+                height: 90,
               ),
               //E-Mail TFF
               ExtPageTFF.UsualTFF(_emailController, Constant.green500,
@@ -107,7 +80,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
               const SizedBox(
                 height: 15,
               ),
-
               KVKK(),
               const SizedBox(
                 height: 15,
@@ -129,13 +101,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
     setState(() {
       _isSigningUp = true;
     });
-    String cellPhone = _cellphoneController.text;
-    String fullName = _fullNameController.text;
+
     String email = _emailController.text;
     String password = _passwordController.text;
     String passwordCheck = _passwordCheckController.text;
 
-    if(password != passwordCheck){
+    if (password != passwordCheck) {
       showToastFail(message: "Password do not match");
       setState(() {
         _isSigningUp = false;
@@ -159,12 +130,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
     }
 
     await FirebaseFirestore.instance.collection('users').doc(user?.uid).set({
-      'cellPhone': cellPhone,
-      'fullName': fullName,
       'email': email,
       'createdAt': FieldValue.serverTimestamp().toString(),
       'password': password,
-    });
+    }, SetOptions(merge: true));
   }
 
   Widget backbtn() {
@@ -205,7 +174,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
             text: TextSpan(
               style: ExtPageText.TxtStyle(FontWeight.w400, 15, Constant.black),
               children: const [
-                TextSpan(text: 'QuickSafe ', style: TextStyle(color: Constant.black)),
+                TextSpan(
+                    text: 'QuickSafe ',
+                    style: TextStyle(color: Constant.black)),
                 TextSpan(
                     text: 'Kişisel Verilerin Korunması ',
                     style: TextStyle(

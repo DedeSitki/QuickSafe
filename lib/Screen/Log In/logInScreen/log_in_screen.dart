@@ -81,7 +81,6 @@ class LogInScreen extends StatefulWidget {
                 ),
                 signInText(),
                 const SizedBox(height: 230),
-                //AnimatedTextHi()
               ],
             ),
           ),

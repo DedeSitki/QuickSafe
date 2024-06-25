@@ -34,10 +34,10 @@ class _PersonalInfoState extends State<PersonalInfo> {
           .get();
       if (userDoc.exists) {
         setState(() {
-          _fullnameController.text = user.uid;
-          _birthdayDateController.text = userDoc['email'];
-          _genderController.text = userDoc['cellPhone'];
-          _adressController.text = userDoc['password'];
+          _fullnameController.text = userDoc['fullanme'];
+          _birthdayDateController.text = userDoc['birthday'];
+          _genderController.text = userDoc['gender'];
+          _adressController.text = userDoc['adress'];
         });
       }
     }
