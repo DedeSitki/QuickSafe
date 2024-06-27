@@ -19,7 +19,7 @@ class ExtPageTFF {
           contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 14),
           prefixIcon: Icon(
             icon,
-            color: Constant.green500,
+            color: Constant.grey,
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: color, width: 2),
@@ -39,7 +39,7 @@ class ExtPageTFF {
           ),
           hintText: hintText,
           labelText: labelText,
-          labelStyle: const TextStyle(color: Constant.green500),
+          labelStyle: const TextStyle(color: Constant.grey),
         ),
       ),
     );
@@ -61,7 +61,7 @@ class ExtPageTFF {
           contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 14),
           prefixIcon: Icon(
             icon,
-            color: Constant.green500,
+            color: Constant.grey,
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: color, width: 2),
@@ -81,7 +81,7 @@ class ExtPageTFF {
           ),
           hintText: hintText,
           labelText: labelText,
-          labelStyle: const TextStyle(color: Constant.green500),
+          labelStyle: const TextStyle(color: Constant.grey),
         ),
       ),
     );
@@ -103,7 +103,7 @@ class ExtPageTFF {
           contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 14),
           prefixIcon: Icon(
             icon,
-            color: Constant.green500,
+            color: Constant.grey,
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: color, width: 2),
@@ -123,7 +123,7 @@ class ExtPageTFF {
           ),
           hintText: hintText,
           labelText: labelText,
-          labelStyle: const TextStyle(color: Constant.green500),
+          labelStyle: const TextStyle(color: Constant.grey),
         ),
       ),
     );
@@ -146,7 +146,7 @@ class ExtPageTFF {
           contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 14),
           prefixIcon: Icon(
             icon,
-            color: Constant.green500,
+            color: Constant.grey,
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: color, width: 2),
@@ -166,7 +166,7 @@ class ExtPageTFF {
           ),
           hintText: hintText,
           labelText: labelText,
-          labelStyle: const TextStyle(color: Constant.green500),
+          labelStyle: const TextStyle(color: Constant.grey),
         ),
       ),
     );
@@ -187,7 +187,7 @@ class ExtPageTFF {
           contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 14),
           prefixIcon: Image.asset(
             image,
-            color: Constant.green500,
+            color: Constant.grey,
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: color, width: 2),
@@ -207,7 +207,7 @@ class ExtPageTFF {
           ),
           hintText: hintText,
           labelText: labelText,
-          labelStyle: const TextStyle(color: Constant.green500),
+          labelStyle: const TextStyle(color: Constant.grey),
         ),
       ),
     );
@@ -229,7 +229,7 @@ class ExtPageTFF {
           contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 14),
           prefixIcon: Image.asset(
             image,
-            color: Constant.green500,
+            color: Constant.grey,
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: color, width: 2),
@@ -249,7 +249,7 @@ class ExtPageTFF {
           ),
           hintText: hintText,
           labelText: labelText,
-          labelStyle: const TextStyle(color: Constant.green500),
+          labelStyle: const TextStyle(color: Constant.grey),
         ),
       ),
     );
@@ -274,7 +274,7 @@ class ExtPageTFF {
           contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 14),
           prefixIcon: Icon(
             icon,
-            color: Constant.green500,
+            color: Constant.grey,
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: color, width: 2),
@@ -294,7 +294,7 @@ class ExtPageTFF {
           ),
           hintText: hintText,
           labelText: labelText,
-          labelStyle: const TextStyle(color: Constant.green500),
+          labelStyle: const TextStyle(color: Constant.grey),
         ),
       ),
     );

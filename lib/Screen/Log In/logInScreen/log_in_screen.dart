@@ -21,10 +21,10 @@ class LogInScreen extends StatefulWidget {
 }
 
 
-  class _LogInScreenState extends State<LogInScreen> {
+class _LogInScreenState extends State<LogInScreen> {
   final FirebaseAuthService _auth = FirebaseAuthService();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   bool _isSigning = false;
 
@@ -39,49 +39,57 @@ class LogInScreen extends StatefulWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 25, left: 24, right: 24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                welcomeText(),
-                const SizedBox(
-                  height: 25,
-                ),
-                logInText(),
-                const SizedBox(
-                  height: 25,
-                ),
-                ExtPageTFF.UsualTFF(_emailController, Constant.green500,
-                    "E-Mail", "E-Mail", Icons.email),
-                const SizedBox(
-                  height: 15,
-                ),
-                ExtPageTFF.UsualTFF(_passwordController, Constant.green500,
-                    "Şifre", "Şifre", Icons.password_outlined),
-                const SizedBox(
-                  height: 15,
-                ),
-                forgotPassword(),
-                const SizedBox(
-                  height: 15,
-                ),
-                ExtPageButton.ObjectButton(() => _signIn(), Constant.green500,
-                    "Giriş Yapınız", _isSigning),
-                const SizedBox(
-                  height: 15,
-                ),
-                orText(),
-                const SizedBox(
-                  height: 15,
-                ),
-                OtherLogin(),
-                const SizedBox(
-                  height: 50,
-                ),
-                signInText(),
-                const SizedBox(height: 230),
-              ],
+          child: Container(
+            // decoration: const BoxDecoration(
+            //   image: DecorationImage(
+            //     image: AssetImage('assets/images/pexels-adrien-olichon-1257089-3137052.jpg'),
+            //     fit: BoxFit.cover,
+            //   ),
+            // ),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 25, left: 24, right: 24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  welcomeText(),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  logInText(),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  ExtPageTFF.UsualTFF(_emailController, Constant.appbarRed,
+                      "E-Mail", "E-Mail", Icons.email),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  ExtPageTFF.UsualTFF(_passwordController, Constant.appbarRed,
+                      "Password", "Password", Icons.password_outlined),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  forgotPassword(),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  ExtPageButton.ObjectButton(() => _signIn(), Constant.appbarRed,
+                      "Sign In", _isSigning),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  orText(),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  OtherLogin(),
+                  const SizedBox(
+                    height: 50,
+                  ),
+                  signInText(),
+                  const SizedBox(height: 230),
+                ],
+              ),
             ),
           ),
         ),
@@ -91,15 +99,15 @@ class LogInScreen extends StatefulWidget {
 
   Text welcomeText() {
     return Text(
-      "Hoş Geldiniz",
-      style: ExtPageText.TxtStyle(FontWeight.w700, 23, Constant.black),
+      "Welcome",
+      style: ExtPageText.TxtStyle(FontWeight.w700, 23, Constant.grey),
     );
   }
 
   Widget logInText() {
     return Text(
-      "Giriş Yapınız",
-      style: ExtPageText.TxtStyle(FontWeight.w700, 40, Constant.black),
+      "Log In",
+      style: ExtPageText.TxtStyle(FontWeight.w700, 40, Constant.grey),
     );
   }
 
@@ -107,11 +115,11 @@ class LogInScreen extends StatefulWidget {
     return GestureDetector(
       child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
         Text(
-          "Bir üyeliğiniz yok mu? ",
+          "Don't have a membership? ",
           style: ExtPageText.TxtStyle(FontWeight.w400, 15, Constant.black),
         ),
         Text(
-          "Kayıt olun",
+          "Sign up",
           style: ExtPageText.TxtStyle(FontWeight.w700, 15, Constant.black),
         )
       ]),
@@ -124,8 +132,8 @@ class LogInScreen extends StatefulWidget {
   GestureDetector forgotPassword() {
     return GestureDetector(
       child: Text(
-        "Şifremi unuttum!",
-        style: ExtPageText.TxtStyle(FontWeight.w500, 14, Constant.yellow600),
+        "Forgot Password!",
+        style: ExtPageText.TxtStyle(FontWeight.w500, 14, Constant.grey),
       ),
       onTap: () {
         Grock.to(const ForgotPassword());
@@ -138,16 +146,16 @@ class LogInScreen extends StatefulWidget {
       children: [
         Expanded(
             child: Divider(
-          thickness: 2,
-          color: Constant.yellow200,
-        )),
+              thickness: 2,
+              color: Constant.grey,
+            )),
         Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15), child: Text("veya")),
+            padding: EdgeInsets.symmetric(horizontal: 15), child: Text("or")),
         Expanded(
             child: Divider(
-          thickness: 2,
-          color: Constant.yellow200,
-        )),
+              thickness: 2,
+              color: Constant.grey,
+            )),
       ],
     );
   }
@@ -186,12 +194,11 @@ class LogInScreen extends StatefulWidget {
       _isSigning = false;
     });
     if (user != null) {
-      showToastCorrect(message: "User is succesfully signIn");
+      showToastCorrect(message: "User is successfully signed in");
       Grock.to(MainScaffold());
     } else {
       showToastFail(message: "Some error happened");
     }
-  }
   }
 
   _signInWithGoogle() async {
@@ -200,11 +207,11 @@ class LogInScreen extends StatefulWidget {
 
     try {
       final GoogleSignInAccount? googleSignInAccount =
-          await _googleSignIn.signIn();
+      await _googleSignIn.signIn();
 
       if (googleSignInAccount != null) {
         final GoogleSignInAuthentication googleSignInAuthentication =
-            await googleSignInAccount.authentication;
+        await googleSignInAccount.authentication;
 
         final AuthCredential credential = GoogleAuthProvider.credential(
           idToken: googleSignInAuthentication.idToken,
@@ -221,4 +228,4 @@ class LogInScreen extends StatefulWidget {
       showToastFail(message: "Some error occurred: $e");
     }
   }
-
+}

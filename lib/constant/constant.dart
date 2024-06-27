@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class Constant{
   ///[Colors]
   //Blue
+  static const Color grey = Color(0xFF303841);
+  //Blue
   static const Color blue500 = Color(0xFF4285f4);
   static const Color blue300 = Color(0xFF8ab4f8);
   //Green

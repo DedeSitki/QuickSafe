@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:grock/grock.dart';
 import 'package:quicksafe_project/Screen/BottomNavBarPages/AccountPages/aboutApp.dart';
+import 'package:quicksafe_project/Screen/BottomNavBarPages/AccountPages/appSettings.dart';
 import 'package:quicksafe_project/Screen/BottomNavBarPages/AccountPages/contactInfo.dart';
 import 'package:quicksafe_project/Screen/BottomNavBarPages/AccountPages/help.dart';
 import 'package:quicksafe_project/Screen/BottomNavBarPages/AccountPages/personalInfo.dart';
@@ -30,22 +31,24 @@ class _AccountState extends State<Account> {
       child: Column(
         children: [
           const SizedBox(height: 30),
-          accountPages("assets/icons/attendance.png", "Hesap Bilgilerim",
+          accountPages("assets/icons/attendance.png", "Account Informations",
               const AccountInfo()),
           const SizedBox(height: 10),
-          accountPages("assets/icons/profile.png", "Kişisel Bilgiler",
+          accountPages("assets/icons/profile.png", "Personal Informations",
               const PersonalInfo()),
           const SizedBox(height: 10),
-          accountPages("assets/icons/hospital.png", "Sağlık Bilgileri",
+          accountPages("assets/icons/hospital.png", "Healthy Informations",
               const HealthyInfo()),
           const SizedBox(height: 10),
-          accountPages("assets/icons/mailbox.png", "İletişim Bilgileri",
+          accountPages("assets/icons/mailbox.png", "Communication Informations",
               const ContactInfo()),
           const SizedBox(height: 10),
-          accountPages("assets/icons/helpdesk.png", "Yardım", const Help()),
+          accountPages("assets/icons/settings.png", "Application Settings", AppSettings()),
+          const SizedBox(height: 10),
+          accountPages("assets/icons/helpdesk.png", "Help", const Help()),
           const SizedBox(height: 10),
           accountPages(
-              "assets/icons/info.png", "Uygulama Hakkında", const AboutApp()),
+              "assets/icons/info.png", "About Application", const AboutApp()),
           const SizedBox(height: 30),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
