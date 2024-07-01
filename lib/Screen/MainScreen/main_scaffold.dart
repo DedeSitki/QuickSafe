@@ -17,7 +17,7 @@ class _MainScaffoldState extends ConsumerState<MainScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
-      bottomNavigationBar: customBottomNavbar(),
+      bottomNavigationBar: const CustomBottomNavbar(),
       body: ref.watch(mainScaffoldRiverpod).body(),
     );
   }

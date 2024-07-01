@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_generative_ai/google_generative_ai.dart';
 import '../../components/gemini/message_tile.dart';
@@ -40,8 +41,11 @@ class _MoodsState extends State<Moods> {
       model: 'gemini-pro', apiKey: _apiKey,
     );
     _chat = _model.startChat();
+    history.add(Content('model', [TextPart("Hello, how can I help you?")]));
+    history.add(Content('model', [TextPart("If you want to consult on medical issues or get advice in an emergency situation, you can ask me.")]));
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -169,8 +173,12 @@ class _MoodsState extends State<Moods> {
 
 
     } catch (e, t) {
-      print(e);
-      print(t);
+      if (kDebugMode) {
+        print(e);
+      }
+      if (kDebugMode) {
+        print(t);
+      }
       _showError(e.toString());
       setState(() {
         _loading = false;

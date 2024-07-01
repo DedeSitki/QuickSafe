@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:grock/grock.dart';
 import 'package:quicksafe_project/components/appbar/custom_appbar.dart';
+import 'package:quicksafe_project/components/appbar/non_logo_appbar_model.dart';
 
 import 'friendDetail.dart';
 
@@ -34,14 +36,17 @@ class _FriendsListState extends State<FriendsList> {
             .toList();
       });
     } catch (e) {
-      print('Error fetching users: $e');
+      if (kDebugMode) {
+        print('Error fetching users: $e');
+      }
     }
   }
 
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: NonLogoAppBarModel(getTitle: () => "Friends List",),
       body: ListView.builder(
         itemCount: friend_requests.length,
         itemBuilder: (context, index) {

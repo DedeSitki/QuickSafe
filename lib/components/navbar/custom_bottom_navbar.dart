@@ -5,7 +5,10 @@ import '../../Screen/MainScreen/main_scaffold.dart';
 import '../../constant/constant.dart';
 import '../../ext/text_style.dart';
 
-class customBottomNavbar extends ConsumerWidget {
+class CustomBottomNavbar extends ConsumerWidget {
+  const CustomBottomNavbar({super.key});
+
+  @override
   Widget build(BuildContext context, WidgetRef ref) {
     var watch = ref.watch(mainScaffoldRiverpod);
     var read = ref.read(mainScaffoldRiverpod);
@@ -13,10 +16,10 @@ class customBottomNavbar extends ConsumerWidget {
       padding: const EdgeInsets.only(bottom: 0),
       child: SafeArea(
         child: Container(
-          height: 77,
+          height: 67,
           width: Grock.width,
           padding: [22, 5].horizontalAndVerticalP,
-          decoration: const BoxDecoration(color: Constant.red500),
+          decoration: const BoxDecoration(color: Constant.appbarRed),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -34,8 +37,8 @@ class customBottomNavbar extends ConsumerWidget {
                           Image.asset(
                             read.items[i].image,
                             color: i == watch.currentIndex
-                                ? Constant.white
-                                : Constant.black,
+                                ? Constant.black
+                                : Constant.white,
                           ),
                           Text(
                             read.items[i].title,
@@ -43,8 +46,8 @@ class customBottomNavbar extends ConsumerWidget {
                               FontWeight.w600,
                               11,
                               i == watch.currentIndex
-                                  ? Constant.white
-                                  : Constant.black,
+                                  ? Constant.black
+                                  : Constant.white,
                             ),
                           ),
                         ],

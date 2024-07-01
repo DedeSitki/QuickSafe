@@ -12,7 +12,6 @@ import '../../MainScreen/main_scaffold.dart';
 import '../SignIn/sign_up.dart';
 import '../forgotPassword/forgot_password.dart';
 
-
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
 
@@ -20,12 +19,10 @@ class LogInScreen extends StatefulWidget {
   State<LogInScreen> createState() => _LogInScreenState();
 }
 
-
 class _LogInScreenState extends State<LogInScreen> {
   final FirebaseAuthService _auth = FirebaseAuthService();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-
   bool _isSigning = false;
 
   @override
@@ -42,7 +39,7 @@ class _LogInScreenState extends State<LogInScreen> {
           child: Container(
             // decoration: const BoxDecoration(
             //   image: DecorationImage(
-            //     image: AssetImage('assets/images/pexels-adrien-olichon-1257089-3137052.jpg'),
+            //     image: AssetImage('assets/images/acilis.png'),
             //     fit: BoxFit.cover,
             //   ),
             // ),
@@ -73,8 +70,8 @@ class _LogInScreenState extends State<LogInScreen> {
                   const SizedBox(
                     height: 15,
                   ),
-                  ExtPageButton.ObjectButton(() => _signIn(), Constant.appbarRed,
-                      "Sign In", _isSigning),
+                  ExtPageButton.ObjectButton(() => _signIn(),
+                      Constant.appbarRed, "Sign In", _isSigning),
                   const SizedBox(
                     height: 15,
                   ),
@@ -146,16 +143,16 @@ class _LogInScreenState extends State<LogInScreen> {
       children: [
         Expanded(
             child: Divider(
-              thickness: 2,
-              color: Constant.grey,
-            )),
+          thickness: 2,
+          color: Constant.grey,
+        )),
         Padding(
             padding: EdgeInsets.symmetric(horizontal: 15), child: Text("or")),
         Expanded(
             child: Divider(
-              thickness: 2,
-              color: Constant.grey,
-            )),
+          thickness: 2,
+          color: Constant.grey,
+        )),
       ],
     );
   }
@@ -207,11 +204,11 @@ class _LogInScreenState extends State<LogInScreen> {
 
     try {
       final GoogleSignInAccount? googleSignInAccount =
-      await _googleSignIn.signIn();
+          await _googleSignIn.signIn();
 
       if (googleSignInAccount != null) {
         final GoogleSignInAuthentication googleSignInAuthentication =
-        await googleSignInAccount.authentication;
+            await googleSignInAccount.authentication;
 
         final AuthCredential credential = GoogleAuthProvider.credential(
           idToken: googleSignInAuthentication.idToken,
