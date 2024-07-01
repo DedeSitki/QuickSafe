@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:quicksafe_project/constant/constant.dart';
 import 'package:quicksafe_project/ext/text_form_field.dart';
 import '../../../components/appbar/non_logo_appbar_model.dart';
@@ -106,9 +107,20 @@ class _AccountInfoState extends State<AccountInfo> {
               Icons.calendar_month,
 
             ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              onPressed: _copyToClipboard,
+              child: const Text("Copy User Id"),
+            ),
           ],
         ),
       ),
+    );
+  }
+  void _copyToClipboard() {
+    Clipboard.setData(ClipboardData(text: _userId.text));
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text("User Id copied to clipboard")),
     );
   }
 }

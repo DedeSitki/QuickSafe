@@ -1,11 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/services.dart';
 import 'package:grock/grock.dart';
 import 'package:quicksafe_project/Screen/BottomNavBarPages/friendsList/friendsList.dart';
+import 'package:quicksafe_project/constant/constant.dart';
+import 'package:quicksafe_project/ext/button.dart';
 
 class Friends extends StatefulWidget {
-  const Friends({Key? key}) : super(key: key);
+  const Friends({super.key});
 
   @override
   State<Friends> createState() => _FriendsState();
@@ -13,7 +16,7 @@ class Friends extends StatefulWidget {
 
 class _FriendsState extends State<Friends> {
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
-  final TextEditingController emailController = TextEditingController();
+  final TextEditingController userIdController = TextEditingController();
   String searchResult = '';
 
   @override
@@ -25,20 +28,9 @@ class _FriendsState extends State<Friends> {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                TextField(
-                  controller: emailController,
-                  decoration: const InputDecoration(
-                    labelText: 'E-posta adresi ara',
-                    border: OutlineInputBorder(),
-                  ),
-                ),
+                searchUserIdField(),
                 const SizedBox(height: 16.0),
-                ElevatedButton(
-                  onPressed: () {
-                    searchUserByEmail(emailController.text);
-                  },
-                  child: const Text('Ara'),
-                ),
+                searchUserIdFieldButton(),
                 const SizedBox(height: 16.0),
                 if (searchResult.isNotEmpty) ...[
                   ListTile(
@@ -54,38 +46,25 @@ class _FriendsState extends State<Friends> {
               ],
             ),
           ),
-          Positioned(
-            bottom: 0,
-            child: GestureDetector(
-              onTap: () {
-                Grock.to(FriendsList());
-              },
-              child: Container(
-                padding: const EdgeInsets.all(8.0),
-                color: Colors.blue,
-                child: const Text(
-                  "Show Friends",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: showFriendsButton(),
             ),
-          ),
         ],
       ),
     );
   }
 
-  void searchUserByEmail(String email) async {
+  void searchUserByUID(String uid) async {
     try {
-      QuerySnapshot querySnapshot = await firestore
+      DocumentSnapshot documentSnapshot = await firestore
           .collection('users')
-          .where('email', isEqualTo: email)
-          .limit(1)
+          .doc(uid)
           .get();
 
-      if (querySnapshot.docs.isNotEmpty) {
+      if (documentSnapshot.exists) {
         setState(() {
-          searchResult = querySnapshot.docs.first['email'];
+          searchResult = documentSnapshot['email'];
         });
       } else {
         setState(() {
@@ -132,6 +111,46 @@ class _FriendsState extends State<Friends> {
         const SnackBar(content: Text('Giriş yapan kullanıcı bulunamadı.')),
       );
     }
+  }
+
+  Widget searchUserIdField() {
+    return TextField(
+      controller: userIdController,
+      decoration: InputDecoration(
+        labelText: 'Search user id',
+        border: const OutlineInputBorder(),
+        suffixIcon: IconButton(
+          icon: const Icon(Icons.copy),
+          onPressed: () {
+            final text = userIdController.text;
+            if (text.isNotEmpty) {
+              Clipboard.setData(ClipboardData(text: text));
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Kopyalandı')),
+              );
+            }
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget searchUserIdFieldButton() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 120),
+      child: ExtPageButton.PrimaryButton(() {
+        searchUserByUID(userIdController.text);
+      }, Constant.appbarRed, "Search"),
+    );
+  }
+
+  Widget showFriendsButton() {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 100),
+      child: ExtPageButton.PrimaryButton(() {
+        Grock.to(const FriendsList());
+      }, Constant.appbarRed, "Show Friends"),
+    );
   }
 }
 

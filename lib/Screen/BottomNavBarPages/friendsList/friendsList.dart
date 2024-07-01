@@ -1,6 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:grock/grock.dart';
 import 'package:quicksafe_project/components/appbar/custom_appbar.dart';
+
+import 'friendDetail.dart';
 
 class FriendsList extends StatefulWidget {
   const FriendsList({super.key});
@@ -42,8 +45,13 @@ class _FriendsListState extends State<FriendsList> {
       body: ListView.builder(
         itemCount: friend_requests.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(friend_requests[index]),
+          return GestureDetector(
+            onTap: () {
+              Grock.to(const FriendDetail());
+            },
+            child: ListTile(
+              title: Text(friend_requests[index]),
+            ),
           );
         },
       ),
