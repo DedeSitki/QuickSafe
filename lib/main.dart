@@ -6,7 +6,7 @@ import 'package:quicksafe_project/Screen/SplashScreen/Splash.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
-Future main() async {
+Future <void> main() async {
   Gemini.init(apiKey: 'AIzaSyBun__bj5deDc0FFCvh04kIgvl_VbuiTVU');
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(

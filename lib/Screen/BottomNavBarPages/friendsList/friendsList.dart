@@ -2,23 +2,23 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:grock/grock.dart';
-import 'package:quicksafe_project/components/appbar/custom_appbar.dart';
+import 'package:flutter/services.dart';
 import 'package:quicksafe_project/components/appbar/non_logo_appbar_model.dart';
+import 'package:quicksafe_project/constant/constant.dart';
+import 'package:quicksafe_project/ext/button.dart';
 
 import 'friendDetail.dart';
 
 class FriendsList extends StatefulWidget {
   const FriendsList({super.key});
 
-
   @override
   State<FriendsList> createState() => _FriendsListState();
 }
 
 class _FriendsListState extends State<FriendsList> {
-
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
-  List<String> friend_requests = [];
+  List<Map<String, String>> users = [];
 
   @override
   void initState() {
@@ -28,11 +28,16 @@ class _FriendsListState extends State<FriendsList> {
 
   Future<void> fetchUsers() async {
     try {
-      QuerySnapshot querySnapshot = await firestore.collection('friend_requests').get();
+      QuerySnapshot querySnapshot = await firestore.collection('users').get();
       setState(() {
-        friend_requests = querySnapshot.docs
-            .where((doc) => doc.data() != null && (doc.data() as Map<String, dynamic>).containsKey('to'))
-            .map((doc) => (doc.data() as Map<String, dynamic>)['to'] as String)
+        users = querySnapshot.docs
+            .where((doc) =>
+        doc.data() != null &&
+            (doc.data() as Map<String, dynamic>).containsKey('fullanme'))
+            .map((doc) => {
+          'id': doc.id,
+          'fullanme': (doc.data() as Map<String, dynamic>)['fullanme'] as String,
+        })
             .toList();
       });
     } catch (e) {
@@ -42,24 +47,47 @@ class _FriendsListState extends State<FriendsList> {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: NonLogoAppBarModel(getTitle: () => "Friends List",),
-      body: ListView.builder(
-        itemCount: friend_requests.length,
+      appBar: NonLogoAppBarModel(getTitle: () => "Friends List"),
+      body: users.isEmpty
+          ? const Center(child: CircularProgressIndicator()) // Veri yüklenene kadar bir progress indicator göster
+          : ListView.builder(
+        itemCount: users.length,
         itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              Grock.to(const FriendDetail());
-            },
-            child: ListTile(
-              title: Text(friend_requests[index]),
+          final user = users[index];
+          return ListTile(
+            title: Text(user['fullanme'] ?? ''),
+            subtitle: GestureDetector(
+              onTap: () {
+                final userId = user['id'];
+                if (userId != null) {
+                  Clipboard.setData(ClipboardData(text: userId));
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('ID kopyalandı: $userId'),
+                    ),
+                  );
+                }
+              },
+              child: Text(user['id'] ?? ''),
             ),
           );
         },
       ),
+      floatingActionButton: Container(
+        padding: const EdgeInsets.only(left: 50, right: 20),
+        child: ExtPageButton.PrimaryButton(() {
+          Grock.to(const FriendDetail());
+        }, Constant.appbarRed, "Check Friend Detail"),
+      ),
     );
   }
+}
+
+void main() {
+  runApp(const MaterialApp(
+    home: FriendsList(),
+  ));
 }

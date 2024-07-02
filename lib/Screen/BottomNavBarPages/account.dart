@@ -6,7 +6,7 @@ import 'package:quicksafe_project/Screen/BottomNavBarPages/AccountPages/appSetti
 import 'package:quicksafe_project/Screen/BottomNavBarPages/AccountPages/contactInfo.dart';
 import 'package:quicksafe_project/Screen/BottomNavBarPages/AccountPages/help.dart';
 import 'package:quicksafe_project/Screen/BottomNavBarPages/AccountPages/personalInfo.dart';
-import 'package:quicksafe_project/Screen/Log%20In/SignIn/my_info.dart';
+import 'package:quicksafe_project/Screen/BottomNavBarPages/AccountPages/my_info.dart';
 import 'package:quicksafe_project/Screen/Log%20In/logInScreen/log_in_screen.dart';
 import 'package:quicksafe_project/constant/constant.dart';
 import 'package:quicksafe_project/ext/button.dart';

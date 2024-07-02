@@ -44,7 +44,6 @@ dependencies:
   animated_text_kit:
   mdi:
   material_design_icons_flutter:
-  video_player:
 
 
 dev_dependencies:
