@@ -91,7 +91,7 @@ class _FriendDetailState extends State<FriendDetail> {
               //User ID TFF
               ExtPageTFF.UsualTFF(
                 _userIdController,
-                Constant.green500,
+                Constant.appbarRed,
                 "User ID",
                 "Enter User ID",
                 Icons.person_search,
@@ -108,7 +108,7 @@ class _FriendDetailState extends State<FriendDetail> {
               //FullName TFF
               ExtPageTFF.UsualTFF(
                 _fullNameController,
-                Constant.green500,
+                Constant.appbarRed,
                 "Name Surname",
                 "Name Surname",
                 Icons.person,
@@ -117,43 +117,43 @@ class _FriendDetailState extends State<FriendDetail> {
                 height: 15,
               ),
               //Gender TFF
-              ExtPageTFF.WithImageTFF(_genderController, Constant.green500,
+              ExtPageTFF.WithImageTFF(_genderController, Constant.appbarRed,
                   "Gender", "Gender", "assets/icons/gender.png"),
               const SizedBox(
                 height: 15,
               ),
               //Birthday TFF
-              ExtPageTFF.UsualTFF(_birthdayController, Constant.green500,
+              ExtPageTFF.UsualTFF(_birthdayController, Constant.appbarRed,
                   "Birthday", "Birthday", Icons.calendar_month),
               const SizedBox(
                 height: 15,
               ),
               //Adress TFF
-              ExtPageTFF.UsualTFF(_adressController, Constant.green500,
+              ExtPageTFF.UsualTFF(_adressController, Constant.appbarRed,
                   "Adress", "Adress", Icons.maps_home_work),
               const SizedBox(
                 height: 15,
               ),
               //Medical History TFF
-              ExtPageTFF.UsualTFF(_medicalHistoryController, Constant.green500,
+              ExtPageTFF.UsualTFF(_medicalHistoryController, Constant.appbarRed,
                   "Medical History", "Medical History", Icons.medical_services),
               const SizedBox(
                 height: 15,
               ),
               //Allergy TFF
-              ExtPageTFF.UsualTFF(_allergyController, Constant.green500,
+              ExtPageTFF.UsualTFF(_allergyController, Constant.appbarRed,
                   "Allergy", "Allergy", Icons.masks),
               const SizedBox(
                 height: 15,
               ),
               // Medicine TFF
-              ExtPageTFF.WithImageTFF(_medicineController, Constant.green500,
+              ExtPageTFF.WithImageTFF(_medicineController, Constant.appbarRed,
                   "Medicine", "Medicine", "assets/icons/medicine.png"),
               const SizedBox(
                 height: 15,
               ),
               //Blood Type TFF
-              ExtPageTFF.UsualTFF(_bloodTypeController, Constant.green500,
+              ExtPageTFF.UsualTFF(_bloodTypeController, Constant.appbarRed,
                   "Blood Type", "Blood Type", Icons.bloodtype),
               const SizedBox(
                 height: 15,
@@ -161,7 +161,7 @@ class _FriendDetailState extends State<FriendDetail> {
               //Cell Phone TFF
               ExtPageTFF.inputFormattersTFF(
                 _cellPhoneController,
-                Constant.green500,
+                Constant.appbarRed,
                 "Phone Number",
                 "Phone Number",
                 Icons.phone,
@@ -172,7 +172,7 @@ class _FriendDetailState extends State<FriendDetail> {
               //Emergency Contact Person Phone Number TFF
               ExtPageTFF.UsualTFF(
                   _emergencyContactInfoController,
-                  Constant.green500,
+                  Constant.appbarRed,
                   "Emergency Contact Person Phone Number",
                   "Emergency Contact Person Phone Number",
                   Icons.contact_emergency),

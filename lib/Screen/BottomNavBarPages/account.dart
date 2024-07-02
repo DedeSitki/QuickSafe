@@ -64,7 +64,7 @@ class _AccountState extends State<Account> {
                 Expanded(
                   child: ExtPageButton.PrimaryButton(() {
                     Grock.to(const MyInfo());
-                  }, Constant.green500, "Edit Information"),
+                  }, Constant.appbarRed, "Edit Information"),
                 ),
               ],
             ),

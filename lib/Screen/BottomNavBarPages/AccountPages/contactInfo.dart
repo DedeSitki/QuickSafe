@@ -59,7 +59,7 @@ class _ContactInfoState extends State<ContactInfo> {
             children: [
               ExtPageTFF.UsualEnabledFalseTFF(
                 _cellphoneController,
-                Constant.green500,
+                Constant.appbarRed,
                 "CellPhone",
                 "CellPhone",
                 Icons.phone_android,
@@ -67,7 +67,7 @@ class _ContactInfoState extends State<ContactInfo> {
               const SizedBox(height: 10),
               ExtPageTFF.UsualEnabledFalseTFF(
                 _emailController,
-                Constant.green500,
+                Constant.appbarRed,
                 "Email",
                 "Email",
                 Icons.mail,
@@ -75,7 +75,7 @@ class _ContactInfoState extends State<ContactInfo> {
               const SizedBox(height: 10),
               ExtPageTFF.UsualEnabledFalseTFF(
                 _emergencyContactInfo,
-                Constant.green500,
+                Constant.appbarRed,
                 "Emergency Contact Info",
                 "Emergency Contact Info",
                 Icons.contact_emergency,

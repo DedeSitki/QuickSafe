@@ -55,27 +55,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 90,
               ),
               //E-Mail TFF
-              ExtPageTFF.UsualTFF(_emailController, Constant.green500,
-                  "E-Mail Adresi", "E-Mail Adresi", Icons.email_outlined),
+              ExtPageTFF.UsualTFF(_emailController, Constant.appbarRed,
+                  "E-Mail Adress", "E-Mail Adress", Icons.email_outlined),
               const SizedBox(
                 height: 15,
               ),
               //Password TFF
               ExtPageTFF.UsualTFF(
                   _passwordController,
-                  Constant.green500,
-                  "Şifrenizi Giriniz",
-                  "Şifrenizi Giriniz",
+                  Constant.appbarRed,
+                  "Enter your password",
+                  "Enter your password",
                   Icons.password_outlined),
               const SizedBox(
                 height: 15,
               ),
-              //Passwprd Check TFF
+              //Password Check TFF
               ExtPageTFF.UsualTFF(
                   _passwordCheckController,
-                  Constant.green500,
-                  "Şifrenizi Tekrar Giriniz",
-                  "Şifrenizi Tekrar Giriniz",
+                  Constant.appbarRed,
+                  "Re-enter your password",
+                  "Re-enter your password",
                   Icons.password_outlined),
               const SizedBox(
                 height: 15,
@@ -85,7 +85,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 15,
               ),
               ExtPageButton.ObjectButton(
-                  _signUp, Constant.green500, "Kayıt Ol", _isSigningUp),
+                  _signUp, Constant.appbarRed, "Sign Up", _isSigningUp),
               const SizedBox(
                 height: 50,
               ),
@@ -147,7 +147,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   Widget text1() {
     return Text(
-      "Kayıt Olun",
+      "Sign Up",
       style: ExtPageText.TxtStyle(FontWeight.w700, 40, Constant.black),
     );
   }
@@ -156,7 +156,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Row(
       children: [
         Checkbox(
-          activeColor: Constant.green500,
+          activeColor: Constant.appbarRed,
           value: value,
           onChanged: (newValue) {
             setState(() {
@@ -175,14 +175,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
               style: ExtPageText.TxtStyle(FontWeight.w400, 15, Constant.black),
               children: const [
                 TextSpan(
-                    text: 'QuickSafe ',
+                    text: 'I have read and accept the QuickSafe ',
                     style: TextStyle(color: Constant.black)),
                 TextSpan(
-                    text: 'Kişisel Verilerin Korunması ',
+                    text: 'Personal Data Protection ',
                     style: TextStyle(
-                        color: Constant.green500, fontWeight: FontWeight.w900)),
+                        color: Constant.appbarRed, fontWeight: FontWeight.w900)),
                 TextSpan(
-                    text: 've İşlenmesi şartlarını okudum ve kabul ediyorum.'),
+                    text: 'and Processing terms.'),
               ],
             ),
           ),
@@ -202,11 +202,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 style:
                     ExtPageText.TxtStyle(FontWeight.w600, 19, Constant.black),
                 children: [
-              const TextSpan(text: "Üyeliğiniz var mı? "),
+              const TextSpan(text: "Do you have a membership?"),
               TextSpan(
-                  text: "Giriş Yap",
+                  text: " Log In",
                   style: ExtPageText.TxtStyle(
-                      FontWeight.w600, 19, Constant.green500))
+                      FontWeight.w600, 19, Constant.appbarRed))
             ])),
       ),
     );

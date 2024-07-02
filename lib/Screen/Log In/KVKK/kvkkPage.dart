@@ -29,7 +29,7 @@ class PrivacyPolicyPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Constant.grey300,
       appBar: AppBar(
-        title: const Text('KVKK Bildirimi'),
+        title: const Text('KVKK Notification'),
       ),
       body: SafeArea(
         child: Padding(
@@ -39,7 +39,7 @@ class PrivacyPolicyPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Kişisel Verilerin Korunması Kanunu (KVKK) Bildirimi',
+                  'Personal Data Protection Law (KVKK) Notification',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -47,12 +47,12 @@ class PrivacyPolicyPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  'Bu mobil uygulama, kişisel verilerinizi korumak ve gizliliğinizi sağlamak amacıyla KVKK hükümlerine uygun olarak çalışmaktadır. Aşağıda, kişisel verilerinizin nasıl toplandığı, kullanıldığı, saklandığı ve paylaşıldığı hakkında bilgi bulabilirsiniz.',
+                  'This mobile application works in accordance with the provisions of KVKK in order to protect your personal data and ensure your privacy. Below you can find information about how your personal data is collected, used, stored and shared.',
                   style: TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 25),
                 const Text(
-                  'Toplanan Kişisel Veriler:',
+                  'Personal Data Collected:',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -60,19 +60,19 @@ class PrivacyPolicyPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  "Uygulamayı kullanırken, aşağıdaki kişisel veriler toplanabilir:",
+                  "When using the application, the following personal data may be collected:",
                   style: TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  "*Adınız, soyadınız, ve iletişim bilgileriniz (e-posta adresi, telefon numarası vb.)\n"
-                  "*Coğrafi konum bilgileri (isteğe bağlı olarak, konum tabanlı hizmetlerin kullanımı için)\n"
-                  "*Kullanıcı tercihleri ve alışveriş geçmişi gibi kullanıcı etkileşim verileri",
+                  "*Your first name, last name, and contact information (e-mail address, phone number, etc.)\n"
+                  "*Geolocation information (optionally, for the use of location-based services)\n"
+                  "*User interaction data, such as user preferences and purchase history",
                   style: TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 25),
                 const Text(
-                  'Kişisel Veri Kullanımı:',
+                  'Use of Personal Data:',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -80,20 +80,20 @@ class PrivacyPolicyPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  "Toplanan kişisel veriler, aşağıdaki amaçlarla kullanılabilir:",
+                  "The personal data collected may be used for the following purposes:",
                   style: TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  "*Hesap oluşturma, işlem gerçekleştirme ve siparişlerinizi tamamlama.)\n"
-                  "*Size özel teklifler ve kampanyalar sunma\n"
-                  "*Ürünler ve hizmetler hakkında size bilgi verme\n"
-                  "*Uygulama deneyimini iyileştirme ve kişiselleştirme",
+                  "*Create an account, execute transactions, and complete your orders.)\n"
+                  "*Provide you with special offers and campaigns\n"
+                  "*Provide you with information about products and services\n"
+                  "*Improve and personalize the app experience",
                   style: TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 25),
                 const Text(
-                  'Kişisel Veri Paylaşımı:',
+                  'Personal Data Sharing:',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -101,12 +101,12 @@ class PrivacyPolicyPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  "Kişisel verileriniz, yasal düzenlemelere uygun olarak ve sadece belirtilen amaçlar için üçüncü taraflarla paylaşılabilir. Bu paylaşımlar, işbirliği yapılan hizmet sağlayıcıları veya yasal gereklilikler çerçevesinde olabilir.",
+                  "Your personal data may be shared with third parties in accordance with legal regulations and only for the specified purposes. These shares may be within the framework of cooperating service providers or legal requirements.",
                   style: TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 25),
                 const Text(
-                  'Kişisel Veri Güvenliği:',
+                  'Personal Data Security:',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -114,12 +114,12 @@ class PrivacyPolicyPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  "Kişisel verilerinizi korumak için gerekli teknik ve organizasyonel önlemleri almaktayız. Veri güvenliği amacıyla uygun şifreleme yöntemleri ve erişim kontrolleri gibi önlemler alınmaktadır.",
+                  "We take the necessary technical and organizational measures to protect your personal data. For data security purposes, measures such as appropriate encryption methods and access controls are taken.",
                   style: TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 25),
                 const Text(
-                  'KVKK Hakları:',
+                  'KVKK Rights:',
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -127,17 +127,17 @@ class PrivacyPolicyPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  "KVKK kapsamında size tanınan haklar dahilinde, kişisel verilerinizin işlenmesi ile ilgili olarak bilgi alma, veri düzeltilmesi, veri silinmesi ve veri aktarımı gibi haklara sahipsiniz. Bu hakları kullanmak için bize başvurabilirsiniz.",
+                  "Within the scope of the rights granted to you within the scope of the KVKK, you have rights such as receiving information, data correction, data deletion and data transfer regarding the processing of your personal data. You can contact us to exercise these rights.",
                   style: TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 10),
                 const Text(
-                  "Bu bildirim, KVKK hükümlerine uygun olarak kişisel verilerinizi işlediğimizi ve koruduğumuzu belirtmektedir. Uygulamayı kullanarak bu şartları kabul etmiş olursunuz.",
+                  "This notice states that we process and protect your personal data in accordance with the provisions of the KVKK. By using the App, you agree to these terms.",
                   style: TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 25),
                 ExtPageButton.PrimaryButton(
-                    btnfunc, Constant.green500, "Okudum ve Onaylıyorum")
+                    btnfunc, Constant.appbarRed, "I Have Read and Approve")
               ],
             ),
           ),

@@ -22,30 +22,30 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.only(top: 10, left: 24, right: 24),
+            padding: const EdgeInsets.only(top: 10, left: 24, right: 24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 backIcons(),
-                SizedBox(
+                const SizedBox(
                   height: 190,
                 ),
                 title(),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 explanationText(),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
-                ExtPageTFF.UsualTFF(_emailcheckcontroller, Constant.green500,
+                ExtPageTFF.UsualTFF(_emailcheckcontroller, Constant.appbarRed,
                     "E-Mail", "E-Mail", Icons.email_outlined),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 ExtPageButton.PrimaryButton(
-                    btnfuct, Constant.green500, "Gönder")
+                    btnfuct, Constant.appbarRed, "Send")
               ],
             ),
           ),
@@ -66,19 +66,19 @@ class _ForgotPasswordState extends State<ForgotPassword> {
 
   Text title() {
     return Text(
-      "Şifreni Yenile",
-      style: ExtPageText.TxtStyle(FontWeight.w700, 31, Constant.black),
+      "Reset Your Password",
+      style: ExtPageText.TxtStyle(FontWeight.w700, 31, Constant.grey),
     );
   }
 
   Widget explanationText() {
     return Text(
-      "Kayıtlı e-posta adresini aşağıya girerek devam et.",
-      style: ExtPageText.TxtStyle(FontWeight.w400, 14, Constant.black),
+      "Continue by entering your registered email address below.",
+      style: ExtPageText.TxtStyle(FontWeight.w400, 14, Constant.grey),
     );
   }
 
   btnfuct() {
-    Grock.to(ForgotPassword2());
+    Grock.to(const ForgotPassword2());
   }
 }

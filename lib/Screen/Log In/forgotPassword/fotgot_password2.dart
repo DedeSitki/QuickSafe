@@ -24,43 +24,43 @@ class _ForgotPasswordState extends State<ForgotPassword2> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.only(top: 10, left: 24, right: 24),
+            padding: const EdgeInsets.only(top: 10, left: 24, right: 24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 backIcons(),
-                SizedBox(
+                const SizedBox(
                   height: 190,
                 ),
                 title(),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 explanationText(),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 ExtPageTFF.UsualTFF(
                     _password2controller,
-                    Constant.green500,
-                    "Şifrenizi Giriniz",
-                    "Şifrenizi Giriniz",
+                    Constant.appbarRed,
+                    "Enter your new password",
+                    "Enter your new password",
                     Icons.password_outlined),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 ExtPageTFF.UsualTFF(
                     _password2checkcontroller,
-                    Constant.green500,
-                    "Şifrenizi Tekrar Giriniz",
-                    "Şifrenizi Tekrar Giriniz",
+                    Constant.appbarRed,
+                    "Enter your new password",
+                    "Enter your new password",
                     Icons.password_outlined),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 ExtPageButton.PrimaryButton(
-                    btnfunc, Constant.green500, "Gönder")
+                    btnfunc, Constant.appbarRed, "Send")
               ],
             ),
           ),
@@ -81,20 +81,20 @@ class _ForgotPasswordState extends State<ForgotPassword2> {
 
   Text title() {
     return Text(
-      "Şifreni Yenile",
-      style: ExtPageText.TxtStyle(FontWeight.w700, 31, Constant.black),
+      "Reset Your Password",
+      style: ExtPageText.TxtStyle(FontWeight.w700, 31, Constant.grey),
       textAlign: TextAlign.center,
     );
   }
 
   Widget explanationText() {
     return Text(
-      "Şifreni değiştirmek için yeni bir şifre gir.",
-      style: ExtPageText.TxtStyle(FontWeight.w400, 14, Constant.black),
+      "To change your password, enter a new password.",
+      style: ExtPageText.TxtStyle(FontWeight.w400, 14, Constant.grey),
     );
   }
 
   btnfunc() {
-    Grock.to(LogInScreen());
+    Grock.to(const LogInScreen());
   }
 }

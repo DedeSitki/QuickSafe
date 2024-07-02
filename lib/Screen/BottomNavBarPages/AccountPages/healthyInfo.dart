@@ -62,7 +62,7 @@ class _HealthyInfoState extends State<HealthyInfo> {
           children: [
             ExtPageTFF.UsualEnabledFalseTFF(
               _medicalHistoryController,
-              Constant.green500,
+              Constant.appbarRed,
               "Medical History",
               "Medical History",
               Icons.medical_services,
@@ -70,7 +70,7 @@ class _HealthyInfoState extends State<HealthyInfo> {
             const SizedBox(height: 10),
             ExtPageTFF.UsualEnabledFalseTFF(
               _allergyController,
-              Constant.green500,
+              Constant.appbarRed,
               "Allergy",
               "Allergy",
               Icons.masks,
@@ -78,7 +78,7 @@ class _HealthyInfoState extends State<HealthyInfo> {
             const SizedBox(height: 10),
             ExtPageTFF.WithImageEnabledFalseTFF(
               _medicineController,
-              Constant.green500,
+              Constant.appbarRed,
               "Medicine",
               "Medicine",
               "assets/icons/medicine.png",
@@ -86,7 +86,7 @@ class _HealthyInfoState extends State<HealthyInfo> {
             const SizedBox(height: 10),
             ExtPageTFF.UsualEnabledFalseTFF(
               _emergencyInformationController,
-              Constant.green500,
+              Constant.appbarRed,
               "Emergency Information",
               "Emergency Information",
               Icons.medical_information,

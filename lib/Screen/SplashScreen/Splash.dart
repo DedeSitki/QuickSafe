@@ -15,12 +15,13 @@ class _SplashState extends State<Splash> {
     Future.delayed(const Duration(seconds: 5), () {
       Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (context) => LogInScreen()),
+        MaterialPageRoute(builder: (context) => const LogInScreen()),
             (route) => false,
       );
     });
     super.initState();
   }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,

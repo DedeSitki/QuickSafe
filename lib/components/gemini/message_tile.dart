@@ -1,4 +1,3 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -68,19 +67,11 @@ class MessageTile extends StatelessWidget {
                           ))))),
             ),
             if (!sendByMe) ...[
-              // const SizedBox(
-              //   width: 8,
-              // ),
               IconButton(
                   onPressed: () async {
                     await Clipboard.setData(ClipboardData(text: message, ));
                   },
                   icon: Icon(Icons.file_copy_outlined, color: Colors.grey.shade300, size: 20,)),
-              // Icon(
-              //   Icons.file_copy_outlined,
-              //   color: Colors.grey.shade300,
-              //   size: 20,
-              // )
             ]
           ],
         ),

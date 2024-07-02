@@ -61,7 +61,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
           children: [
             ExtPageTFF.UsualEnabledFalseTFF(
               _fullnameController,
-              Constant.green500,
+              Constant.appbarRed,
               "Name Surname",
               "Name Surname",
               Icons.person,
@@ -69,7 +69,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
             const SizedBox(height: 10),
             ExtPageTFF.UsualEnabledFalseTFF(
               _birthdayDateController,
-              Constant.green500,
+              Constant.appbarRed,
               "Birthday",
               "Birthday",
               Icons.calendar_month,
@@ -77,7 +77,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
             const SizedBox(height: 10),
             ExtPageTFF.WithImageEnabledFalseTFF(
               _genderController,
-              Constant.green500,
+              Constant.appbarRed,
               "Gender",
               "Gender",
               "assets/icons/gender.png",
@@ -85,7 +85,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
             const SizedBox(height: 10),
             ExtPageTFF.UsualEnabledFalseTFF(
               _adressController,
-              Constant.green500,
+              Constant.appbarRed,
               "Adress",
               "Adress",
               Icons.maps_home_work,

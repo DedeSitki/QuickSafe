@@ -9,7 +9,7 @@ class NonLogoAppBarModel extends StatelessWidget
   final String Function() getTitle;
 
   const NonLogoAppBarModel({super.key, required this.getTitle})
-      : preferredSize = const Size.fromHeight(53);
+      : preferredSize = const Size.fromHeight(58);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class NonLogoAppBarModel extends StatelessWidget
                   Grock.back();
                 },
                 child:
-                    Image.asset("assets/icons/back.png", color: Colors.white)),
+                    Image.asset("assets/icons/back.png", color: Constant.white)),
             Expanded(
                 child: Center(
                     child: Text(getTitle(),
